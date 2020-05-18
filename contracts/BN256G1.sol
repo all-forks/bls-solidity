@@ -178,7 +178,7 @@ library BN256G1 {
   /// @dev Function to convert a `Hash(msg|DATA)` to a point in the curve as defined in [VRF-draft-04](https://tools.ietf.org/pdf/draft-irtf-cfrg-vrf-04).
   /// @param _message The message used for computing the VRF
   /// @return The hash point in affine coordinates
-  function hashToTryAndIncrement(bytes memory _message) internal returns (uint, uint) {
+  function hashToTryAndIncrement(bytes memory _message) public returns (uint, uint) {
     // Find a valid EC point
     // Loop over counter ctr starting at 0x00 and do hash
     for (uint8 ctr = 0; ctr < 256; ctr++) {
